@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script src='js/lib/Box2dWeb.min.js'></script>
+        <script src="js/lib/Three.js"></script>
+        <script src="js/lib/keyboard.js"></script>
+        <script src="js/lib/jquery.js"></script>
+        <script src="js/maze.js"></script>
+        <script src="js/config.js"></script>
+        <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+        <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+        <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+        <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    
+    <body>
+    
+    <div id='instructions'>
+            <div id='level'>
+                    Level 1
+                </div>
+        <div>
+            <div class="row justify-content-center">
+                <button id="class-a">&#8593;</button><br><br>
+            </div>
+            <div class="row justify-content-center">
+                <button id="class-b" disabled>&#8592;</button>
+                <img src="img/joystick.png" alt="">
+                <button id="class-d" disabled>&#8594;</button>
+            </div>
+            <div class="row justify-content-center">
+                <button id="class-c" disabled>&#8595;</button>
+            </div>
+        </div>
+        
+        <video autoplay playsinline muted id="webcam" width="200" height="200"></video>
+        <div class="controlButton">
+            <button id="playButton" disabled>Play</button>
+        </div>
+        <div id="console"></div>
+        <!--<canvas id="myCanvas" width="180" height="180"></canvas>-->
+    </div>
+    
+    <div id='help'>
+        <img src="img/arrow.png" alt=""><br>
+        <span>Click in the arrows to add the current camera view as an example for that control then press <b style="color: green;">Play</b></span>
+    </div>
+    </body>
+    <script src="js/index.js"></script>
+</html>
+

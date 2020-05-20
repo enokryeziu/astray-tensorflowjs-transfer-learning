@@ -1,0 +1,84 @@
+body {
+    background: black;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica';
+}
+
+#instructions {
+    background-color: #2a2a2a;
+    color: white;
+    text-align: center;
+    padding: 32px;
+    margin: 0px;
+    border: 2px solid white;
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    z-index: 1;
+}
+#instructions img {
+    height: 60px;
+}
+
+#help {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    background: rgba(0, 0, 0, .7);   
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    color: white;
+}
+#help span, #help img {
+    top: 10%;
+    position: relative;
+}
+#level {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    padding: 4px;
+    color: yellow;   
+    font-weight: bold;
+}
+video {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    border: 1px solid #585858;
+    border-radius: 4px;
+    background: black;
+    padding: 1px;
+    margin-top: 50px;
+}
+#instructions div button {
+    background-color: #f44336; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    height: 60px ;
+}
+#instructions div button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    height: 60px ;
+}
+.controlButton {
+    margin: 30px;
+}
+.controlButton button {
+    background-color: green !important;
+}
