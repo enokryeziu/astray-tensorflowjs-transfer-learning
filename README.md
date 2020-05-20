@@ -1,4 +1,4 @@
-# Web Crawler JAVA
+# Play Astray using Transfer Learning via the Webcam
 
 TensorFlow, as you may have heard, is an open source library for machine learning, originally developed by Google. This app use a pretrained MobileNet model and train another model using an internal mobilenet activation to predict 4 different classes from the webcam defined by the user. 
 
