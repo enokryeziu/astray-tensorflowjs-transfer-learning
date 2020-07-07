@@ -12,9 +12,14 @@ async function app() {
   await setupWebcam();
   var classArray = ["class-b", "class-c", "class-d"];
 
+  // Reads an image from the webcam and associates it with a specific class
+  // index.
   const addExample = classId => {
+    // Get the intermediate activation of MobileNet 'conv_preds' and pass that
+    // to the KNN classifier.
     const activation = net.infer(webcamElement, 'conv_preds');
     //console.log(draw());
+    // Pass the intermediate activation to the classifier.
     classifier.addExample(activation, classId);
     if(classId !=3)
       document.getElementById(classArray[classId]).disabled = false;
@@ -31,11 +36,15 @@ function draw() {
       height = webcamElement.videoHeight;
 
     if (width && height) {
+
+      // Setup a canvas with the same dimensions as the video.
       hidden_canvas.width = width;
       hidden_canvas.height = height;
-      
+
+      // Make a copy of the current frame in the video on the canvas.
       context.drawImage(webcamElement, 0, 0, width, height);
 
+      // Turn the canvas image into a dataURL that can be used as a src for our photo.
       return hidden_canvas.toDataURL('image/png');
     }
   }
@@ -49,8 +58,9 @@ function draw() {
     document.getElementById("help").outerHTML = "";
     while (true) {
       if (classifier.getNumClasses() > 0) {
-     
+        // Get the activation from mobilenet from the webcam.
         const activation = net.infer(webcamElement, 'conv_preds');
+        // Get the most likely class and confidences from the classifier module.
         const result = await classifier.predictClass(activation);
 
         const classes = ['Up', 'Left', 'Down', 'Right'];
